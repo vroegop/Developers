@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: nl.developers.randyvroegop.sollicitatieapp.resume.ResumeRestControllerTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.64 s - in nl.developers.randyvroegop.sollicitatieapp.resume.ResumeRestControllerTest

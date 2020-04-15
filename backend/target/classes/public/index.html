@@ -1,0 +1,73 @@
+<html>
+<head>
+    <!-- Polyfills only needed for Firefox and Edge. -->
+    <script src="https://unpkg.com/@webcomponents/webcomponentsjs@latest/webcomponents-loader.js"></script>
+</head>
+<body>
+<!-- Works only on browsers that support Javascript modules like
+     Chrome, Safari, Firefox 60, Edge 17 -->
+<script type="module">
+    import {LitElement, html, css} from 'https://unpkg.com/lit-element/lit-element.js?module';
+
+    class MyElement extends LitElement {
+
+      connectedCallback() {
+          super.connectedCallback()
+
+          fetch('/resume').then(data => data.json()).then(response => this.resumes = response);
+      }
+
+      static get properties() {
+        return {
+          resumes: {type: Array }
+        }
+      }
+
+      static get styles() {
+        return css`
+            ul {
+              list-style-type: none;
+            }
+
+            li {
+              font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+              border-bottom: 1px solid #ccc;
+              text-decoration: none;
+              color: #000;
+              transition: font-size 0.3s ease, background-color 0.3s ease;
+              display: block;
+            }
+
+            li:last-child {
+              border: none;
+            }
+        `;
+      }
+
+      render() {
+        return html`
+            ${this.resumes.map(resume => html`
+                <h1>Resume of: ${resume.name}</h1>
+                <ul>
+                    <li>Phonenumber: ${resume.phonenumber}</li>
+                    <li>Experiences:</li>
+                    <ul>
+                        ${resume.experience.map(exp => html`
+                            <li>Company: ${exp.companyName}</li>
+                            <li>Years of experience: ${exp.yearsExperience}</li>
+                        `)}
+                    </ul>
+                </ul>
+            `)}
+        `;
+      }
+
+    }
+
+    customElements.define('my-element', MyElement);
+  </script>
+
+<my-element></my-element>
+
+</body>
+</html>

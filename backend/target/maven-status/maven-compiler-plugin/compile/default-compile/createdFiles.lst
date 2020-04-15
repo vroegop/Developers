@@ -1,0 +1,8 @@
+nl/developers/randyvroegop/sollicitatieapp/SollicitatieAppApplication.class
+nl/developers/randyvroegop/sollicitatieapp/resume/model/Experience.class
+nl/developers/randyvroegop/sollicitatieapp/resume/model/Resume$ResumeBuilder.class
+nl/developers/randyvroegop/sollicitatieapp/resume/model/Resume.class
+nl/developers/randyvroegop/sollicitatieapp/resume/model/Experience$ExperienceBuilder.class
+nl/developers/randyvroegop/sollicitatieapp/resume/ResumeRestController.class
+nl/developers/randyvroegop/sollicitatieapp/resume/ResumeService.class
+nl/developers/randyvroegop/sollicitatieapp/resume/ResumeMongoRepository.class
